@@ -51,4 +51,7 @@ local.properties
 # Code Recommenders
 .recommenders/
 
+# IntelliJ IDEA files
+.idea/
+
 .DS_Store
