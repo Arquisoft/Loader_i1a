@@ -46,9 +46,7 @@ public class ExcelReadList extends AbstractReadList {
 
 			int rows = sheet.getPhysicalNumberOfRows();
 
-			int cols = 9; // Nombre/Apellidos/Email/Fecha
-							// nacimiento/Dirección/Nacionalidad/DNI/NIF/Polling
-							// code
+			int cols = 5; // Name/location/Email/Id/Kind
 
 			for (int r = 1; r < rows; r++) {
 				row = sheet.getRow(r);
@@ -59,18 +57,14 @@ public class ExcelReadList extends AbstractReadList {
 
 				if (data != null) {
 
-					if (data[6] == null) {
-						wReport.report("Null DNI on row number " + r, ruta);
-					} else if (data[0] == null) {
+					if (data[0].equals("")) {
 						wReport.report("Null name on row number " + r, ruta);
-					} else if (data[3] == null) {
-						wReport.report("Null birth date on row number " + r, ruta);
-					} else if (data[4] == null) {
-						wReport.report("Null address on row number " + r, ruta);
-					} else if (data[1] == null) {
-						wReport.report("Null last name on row number " + r, ruta);
-					} else if (data[7] == null) {
-						wReport.report("Null NIF on row number " + r, ruta);
+					} else if (data[2].equals("")) {
+						wReport.report("Null email on row number " + r, ruta);
+					} else if (data[3].equals("")) {
+						wReport.report("Null ID on row number " + r, ruta);
+					} else if (data[4].equals("")) {
+						wReport.report("Null kind on row number " + r, ruta);
 					} else {
 						cit = new Agent(data);
 						if (census.contains(cit)) {

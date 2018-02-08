@@ -46,7 +46,7 @@ public class Agent {
 
     }
 
-    public Agent(String name, String location, String email, String ID, int kind, String pass)
+    public Agent(String name, String location, String email, String ID, int kind, String password)
     {
         this(name, location, email, ID, kind);
         this.password = password;

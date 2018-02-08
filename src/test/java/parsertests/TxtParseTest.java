@@ -35,7 +35,7 @@ public class TxtParseTest {
 	@Test
 	public void testParse() {
 		clearDatabase();
-		String resultSt = "[Agent [firstName=adri, lastName=miron, email=testemail@uniovi.es, "
+		String resultSt = "[Agent [firstName=jorge, lastName=miron, email=testemail@uniovi.es, "
 				+ "birthDate=Sun May 19 00:00:00 CEST 1996, address=C/Asturias, "
 				+ "ID=testid, nationality=camboya, NIF=1234, pollingStation=1]]";
 		String resultTravis = "[Agent [firstName=adri, lastName=miron, email=testemail@uniovi.es, "
