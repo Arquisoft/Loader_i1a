@@ -22,7 +22,7 @@ import es.uniovi.asw.reportwriter.WriteReportDefault;
 /**
  * DAO implementation for MongoDB database
  * 
- * @author Gonzalo de la Cruz Fernández - UO244583
+ * @author Roberto
  *
  */
 public class CitizenDaoImplMongo implements CitizenDao {
@@ -94,7 +94,7 @@ public class CitizenDaoImplMongo implements CitizenDao {
 
 	/**
 	 * 
-	 * @param c
+	 * @param a
 	 * 
 	 *            Inserts a new document into the database with the citizen
 	 *            passed as a parameter.
@@ -102,21 +102,17 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	 */
 
 	@Override
-	public boolean insert(Agent c) {
+	public boolean insert(Agent a) {
 		BasicDBObject document = new BasicDBObject();
-		document.put("firstName", c.getName());
-		document.put("lastName", c.getlastName());
-		document.put("email", c.getEmail());
-		document.put("password", c.getPassword());
-		document.put("dateOfBirth", c.getbirthDate());
-		document.put("address", c.getAddress());
-		document.put("nationality", c.getNationality());
-		document.put("id", c.getID());
-		document.put("nif", c.getNIF());
-		document.put("pollingStation", c.getpollingStation());
+		document.put("name", a.getName());
+		document.put("email", a.getEmail());
+		document.put("password", a.getPassword());
+		document.put("location", a.getLocation());
+		document.put("id", a.getID());
+		document.put("kind", a.getKind());
 		try {
 			users.insert(document);
-			reporter.logDatabaseInsertion(c);
+			reporter.logDatabaseInsertion(a);
 			return true;
 		} catch (DuplicateKeyException me) {
 			reporter.report(me, "Error inserting in the database: "
@@ -157,16 +153,15 @@ public class CitizenDaoImplMongo implements CitizenDao {
 		BasicDBObject whereQuery = new BasicDBObject();
 		whereQuery.put("id", ID);
 		DBCursor cursor = users.find(whereQuery);
-		Agent c = null;
+		Agent a = null;
 		while (cursor.hasNext()) {
 			DBObject user = cursor.next();
-			c = new Agent((String) user.get("firstName"), (String) user.get(
-					"lastName"), (String) user.get("email"), (Date) user.get(
-							"dateOfBirth"), (String) user.get("address"),
-					(String) user.get("nationality"), (String) user.get("id"),
-					(String) user.get("nif"), (int) user.get("pollingStation"));
+			a = new Agent((String) user.get("name"), (String) user.get("location"),
+					(String) user.get("email"),
+					 (String) user.get("id"),
+					(int) user.get("kind"), (String) user.get("password"));
 		}
-		return c;
+		return a;
 	}
 
 	/**
@@ -183,13 +178,11 @@ public class CitizenDaoImplMongo implements CitizenDao {
 		DBCursor cursor = users.find();
 		while (cursor.hasNext()) {
 			DBObject user = cursor.next();
-			Agent c = new Agent((String) user.get("firstName"),
-					(String) user.get("lastName"), (String) user.get("email"),
-					(Date) user.get("dateOfBirth"), (String) user.get(
-							"address"), (String) user.get("nationality"),
-					(String) user.get("id"), (String) user.get("nif"),
-					(int) user.get("pollingStation"));
-			allCitizens.add(c);
+			Agent a = new Agent((String) user.get("name"), (String) user.get("location"),
+					(String) user.get("email"),
+					(String) user.get("id"),
+					(int) user.get("kind"), (String) user.get("password"));
+			allCitizens.add(a);
 		}
 
 		return allCitizens;

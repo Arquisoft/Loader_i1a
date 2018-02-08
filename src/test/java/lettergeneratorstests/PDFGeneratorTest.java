@@ -17,6 +17,7 @@ public class PDFGeneratorTest {
 		PDFLetterGenerator pdfg = new PDFLetterGenerator();
 		Agent c = new Agent("adri", "mc", "zoo@snek.com", "10/10/2010", "a",
 				"a", "123456789Z", "132456789", 1234);
+		dummy = new Agent("a", "Gijón", "a@a.com", "1", 1);
 		pdfg.generatePersonalLetter(c);
 		File f = new File(c.getID() + ".pdf");
 		assertTrue(f.exists());
