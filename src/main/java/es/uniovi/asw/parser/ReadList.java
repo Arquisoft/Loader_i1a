@@ -1,5 +1,7 @@
 package es.uniovi.asw.parser;
 
+import es.uniovi.asw.agents.Agent;
+
 import java.util.Set;
 
 /**

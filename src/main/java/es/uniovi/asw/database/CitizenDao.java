@@ -2,7 +2,7 @@ package es.uniovi.asw.database;
 
 import java.util.List;
 
-import es.uniovi.asw.parser.Agent;
+import es.uniovi.asw.agents.Agent;
 
 /**
  * Interface for the methods that the DAO must accomplish

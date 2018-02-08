@@ -3,7 +3,7 @@ package es.uniovi.asw.parser.parserutil;
 import java.security.SecureRandom;
 import java.util.Set;
 
-import es.uniovi.asw.parser.Agent;
+import es.uniovi.asw.agents.Agent;
 
 public class PasswordGenerator {
 	private final static String passCharacters = "0123456789ABCDEFGHIJKLMNOP"

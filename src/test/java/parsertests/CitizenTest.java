@@ -2,7 +2,7 @@ package parsertests;
 
 import static org.junit.Assert.*;
 
-import es.uniovi.asw.parser.Agent;
+import es.uniovi.asw.agents.Agent;
 import org.junit.Test;
 
 public class CitizenTest {

@@ -6,7 +6,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import es.uniovi.asw.parser.Agent;
+import es.uniovi.asw.agents.Agent;
 
 public class PDFLetterGenerator implements LetterGenerator {
 

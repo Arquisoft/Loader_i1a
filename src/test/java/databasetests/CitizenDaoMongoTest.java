@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
-import es.uniovi.asw.parser.Agent;
+import es.uniovi.asw.agents.Agent;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -29,11 +29,11 @@ public class CitizenDaoMongoTest {
 	@Before
 	public void insertCitizen() {
 		dummy = new Agent("a", "b", "a@a.com", "10/10/2010", "a", "a",
-				"123456789Z", "132456789", 1234);
+				"123456789Z", "132456789", 1234, "Gijon", 1);
 		dummy1 = new Agent("a", "b", "b@a.com", "10/10/2010", "a", "a", "2",
-				"132456789", 1234);
+				"132456789", 1234, "Oviedo", 2);
 		dummy2 = new Agent("a", "b", "c@a.com", "10/10/2010", "a", "a", "3",
-				"132456789", 1234);
+				"132456789", 1234, "Avilés", 3);
 	}
 
 	@After

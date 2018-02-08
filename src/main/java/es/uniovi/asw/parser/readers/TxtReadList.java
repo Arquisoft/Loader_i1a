@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.HashSet;
 
-import es.uniovi.asw.parser.Agent;
+import es.uniovi.asw.agents.Agent;
 import es.uniovi.asw.parser.lettergenerators.LetterGenerator;
 
 public class TxtReadList extends AbstractReadList {

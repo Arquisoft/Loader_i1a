@@ -1,6 +1,6 @@
 package es.uniovi.asw.parser.lettergenerators;
 
-import es.uniovi.asw.parser.Agent;
+import es.uniovi.asw.agents.Agent;
 
 /**
  * 

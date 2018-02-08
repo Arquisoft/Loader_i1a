@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import java.util.HashSet;
 import java.util.Set;
 
-import es.uniovi.asw.parser.Agent;
+import es.uniovi.asw.agents.Agent;
 import org.junit.Test;
 
 import es.uniovi.asw.parser.parserutil.PasswordGenerator;

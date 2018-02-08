@@ -16,7 +16,7 @@ import org.junit.Test;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 
-import es.uniovi.asw.parser.Agent;
+import es.uniovi.asw.agents.Agent;
 import es.uniovi.asw.parser.ReadList;
 import es.uniovi.asw.parser.readers.TxtReadList;
 

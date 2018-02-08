@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Set;
 
-import es.uniovi.asw.parser.Agent;
+import es.uniovi.asw.agents.Agent;
 import org.assertj.core.util.Files;
 import org.junit.Test;
 
