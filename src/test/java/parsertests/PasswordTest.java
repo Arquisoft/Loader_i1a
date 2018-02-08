@@ -14,12 +14,12 @@ public class PasswordTest {
 
 	@Test
 	public void testNotNull() {
-		Agent c = new Agent("a", "b", "a@a.com", "10/10/2010", "a", "a",
-				"7198791Z", "2652165165", 1234);
+
+		Agent a = new Agent("a", "Oviedo", "b@a.com", "2", 1);
 		Set<Agent> census = new HashSet<Agent>();
-		census.add(c);
+		census.add(a);
 		PasswordGenerator.createPasswords(census);
-		assertTrue(c.getPassword() != null);
+		assertTrue(a.getPassword() != null);
 
 		PasswordGenerator pass = new PasswordGenerator();
 		assertNotNull(pass);

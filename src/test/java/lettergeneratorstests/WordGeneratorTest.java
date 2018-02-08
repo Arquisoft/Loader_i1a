@@ -15,10 +15,10 @@ public class WordGeneratorTest {
 	@Test
 	public void test() {
 		WordLetterGenerator wordg = new WordLetterGenerator();
-		Agent c = new Agent("adri", "mc", "zoo@snek.com", "10/10/2010", "a",
-				"a", "123456789Z", "132456789", 1234);
-		wordg.generatePersonalLetter(c);
-		File f = new File(c.getID() + ".docx");
+		Agent a = new Agent("Roberto", "Gijón",
+				"robertops1818@gmail.com", "53778998F", 1);
+		wordg.generatePersonalLetter(a);
+		File f = new File(a.getID() + ".docx");
 		assertTrue(f.exists());
 		Files.delete(f);
 	}

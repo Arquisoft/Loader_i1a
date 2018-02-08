@@ -9,17 +9,15 @@ public class CitizenTest {
 
 	@Test
 	public void testEquals() {
-		Agent dummy = new Agent("a", "b", "a@a.com", "10/10/2010", "a", "a",
-				"123456789Z", "132456789", 1234);
-		Agent dummy1 = new Agent("b", "c", "b@a.com", "10/10/2010", "a",
-				"a", "123456789Z", "132456789", 1234);
-		Agent dummy2 = new Agent("a", "b", "b@a.com", "10/10/2010", "a",
-				"a", "3", "132456789", 1234);
-		Agent dummy3 = null;
-		Agent dummy4 = new Agent("a", "b", "b@a.com", "10/10/2010", "a",
-				"a", null, "132456789", 1234);
-		Agent dummy5 = new Agent("a", "b", "b@a.com", "10/10/2010", "a",
-				"a", null, "132456789", 1234);
+
+		Agent a = new Agent("Roberto", "Gijón",
+				"robertops1818@gmail.com", "53778998F", 1);
+		Agent dummy = new Agent("a", "Gijón", "a@a.com", "1", 1);
+		Agent dummy1 = new Agent("b", "Oviedo", "b@a.com", "2", 1);
+		Agent dummy2 = new Agent("c", "Oviedo", "b@a.com", "2", 1);
+		Agent dummy3 = new Agent("b", "Oviedo", "b@a.com", "2", 1);
+		Agent dummy4 = new Agent("a", "Oviedo", "b@a.com", "2", 1);
+		Agent dummy5 = new Agent("a", "Oviedo", "b@a.com", "2", 1);
 		Double doub = new Double(5.0);
 
 		assertTrue(dummy.equals(dummy));
