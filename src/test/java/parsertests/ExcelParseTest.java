@@ -21,16 +21,10 @@ public class ExcelParseTest {
 
 	@Test
 	public void testParse() {
-		String result = "[Agent [firstName=Juan, lastName=Torres"
-				+ " Pardo, email=juan@example.com, birthDate=Thu Oct"
-				+ " 10 00:00:00 CET 1985, address=C/ Federico García Lorca 2,"
-				+ " ID=90500084Y, "
-				+ "nationality=Español, NIF=1.0, pollingStation=1]]";
-		String resultForTravis = "[Agent [firstName=Juan, lastName=Torres"
-				+ " Pardo, email=juan@example.com, birthDate=Thu Oct"
-				+ " 10 00:00:00 UTC 1985, address=C/ Federico García Lorca 2,"
-				+ " ID=90500084Y, "
-				+ "nationality=Español, NIF=1.0, pollingStation=1]]";
+		String result = "[Agent [name=jorge, email=jorge@email.es, "
+				+ "location=18:13:14:12S, ID=ID4, kind=1]]";
+		String resultForTravis = "[Agent [name=jorge, email=jorge@email.es, "
+				+ "location=18:13:14:12S, ID=ID4, kind=1]]";
 
 		ReadList rl = new ExcelReadList();
 		readData = rl.parse("src/test/resources/test2.xlsx");

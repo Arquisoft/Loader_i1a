@@ -129,12 +129,12 @@ public class Agent {
 
     @Override
     public String toString() {
-        return "Agent{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", location='" + location + '\'' +
-                ", ID='" + ID + '\'' +
+        return "Agent [" +
+                "name=" + name +
+                ", email=" + email  +
+                ", location=" + location  +
+                ", ID=" + ID +
                 ", kind=" + kind +
-                '}';
+                ']';
     }
 }

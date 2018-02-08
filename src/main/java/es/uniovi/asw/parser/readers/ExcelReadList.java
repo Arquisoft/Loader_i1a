@@ -66,7 +66,8 @@ public class ExcelReadList extends AbstractReadList {
 					} else if (data[4].equals("")) {
 						wReport.report("Null kind on row number " + r, ruta);
 					} else {
-						cit = new Agent(data);
+						Double kind = Double.parseDouble(data[4]);
+						cit = new Agent(data[0], data[1], data[2], data[3], kind.intValue());
 						if (census.contains(cit)) {
 							wReport.report("Duplicated citizen on row number " + r, ruta);
 						} else {
