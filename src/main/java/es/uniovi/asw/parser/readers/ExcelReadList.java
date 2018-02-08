@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashSet;
 
+import es.uniovi.asw.parser.Agent;
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -14,7 +15,6 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import es.uniovi.asw.parser.Citizen;
 import es.uniovi.asw.parser.lettergenerators.LetterGenerator;
 
 /**
@@ -42,7 +42,7 @@ public class ExcelReadList extends AbstractReadList {
 
 			wb = new XSSFWorkbook(OPCPackage.open(file));
 			sheet = wb.getSheetAt(0);
-			census = new HashSet<Citizen>();
+			census = new HashSet<Agent>();
 
 			int rows = sheet.getPhysicalNumberOfRows();
 
@@ -55,7 +55,7 @@ public class ExcelReadList extends AbstractReadList {
 
 				String[] data = parseRow(row, cols);
 
-				Citizen cit = null;
+				Agent cit = null;
 
 				if (data != null) {
 
@@ -72,7 +72,7 @@ public class ExcelReadList extends AbstractReadList {
 					} else if (data[7] == null) {
 						wReport.report("Null NIF on row number " + r, ruta);
 					} else {
-						cit = new Citizen(data);
+						cit = new Agent(data);
 						if (census.contains(cit)) {
 							wReport.report("Duplicated citizen on row number " + r, ruta);
 						} else {

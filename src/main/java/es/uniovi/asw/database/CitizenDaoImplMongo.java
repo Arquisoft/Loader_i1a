@@ -15,7 +15,7 @@ import com.mongodb.DuplicateKeyException;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoException;
 
-import es.uniovi.asw.parser.Citizen;
+import es.uniovi.asw.parser.Agent;
 import es.uniovi.asw.reportwriter.WriteReport;
 import es.uniovi.asw.reportwriter.WriteReportDefault;
 
@@ -102,7 +102,7 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	 */
 
 	@Override
-	public boolean insert(Citizen c) {
+	public boolean insert(Agent c) {
 		BasicDBObject document = new BasicDBObject();
 		document.put("firstName", c.getName());
 		document.put("lastName", c.getlastName());
@@ -153,14 +153,14 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	 */
 
 	@Override
-	public Citizen findById(String ID) {
+	public Agent findById(String ID) {
 		BasicDBObject whereQuery = new BasicDBObject();
 		whereQuery.put("id", ID);
 		DBCursor cursor = users.find(whereQuery);
-		Citizen c = null;
+		Agent c = null;
 		while (cursor.hasNext()) {
 			DBObject user = cursor.next();
-			c = new Citizen((String) user.get("firstName"), (String) user.get(
+			c = new Agent((String) user.get("firstName"), (String) user.get(
 					"lastName"), (String) user.get("email"), (Date) user.get(
 							"dateOfBirth"), (String) user.get("address"),
 					(String) user.get("nationality"), (String) user.get("id"),
@@ -176,14 +176,14 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	 */
 
 	@Override
-	public List<Citizen> findAll() {
+	public List<Agent> findAll() {
 
-		List<Citizen> allCitizens = new ArrayList<>();
+		List<Agent> allCitizens = new ArrayList<>();
 
 		DBCursor cursor = users.find();
 		while (cursor.hasNext()) {
 			DBObject user = cursor.next();
-			Citizen c = new Citizen((String) user.get("firstName"),
+			Agent c = new Agent((String) user.get("firstName"),
 					(String) user.get("lastName"), (String) user.get("email"),
 					(Date) user.get("dateOfBirth"), (String) user.get(
 							"address"), (String) user.get("nationality"),

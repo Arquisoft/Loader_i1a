@@ -16,13 +16,13 @@ import org.junit.Test;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 
-import es.uniovi.asw.parser.Citizen;
+import es.uniovi.asw.parser.Agent;
 import es.uniovi.asw.parser.ReadList;
 import es.uniovi.asw.parser.readers.TxtReadList;
 
 public class TxtParseTest {
 
-	private Set<Citizen> readData;
+	private Set<Agent> readData;
 
 	@Before
 	public void clearDatabase() {
@@ -35,10 +35,10 @@ public class TxtParseTest {
 	@Test
 	public void testParse() {
 		clearDatabase();
-		String resultSt = "[Citizen [firstName=adri, lastName=miron, email=testemail@uniovi.es, "
+		String resultSt = "[Agent [firstName=adri, lastName=miron, email=testemail@uniovi.es, "
 				+ "birthDate=Sun May 19 00:00:00 CEST 1996, address=C/Asturias, "
 				+ "ID=testid, nationality=camboya, NIF=1234, pollingStation=1]]";
-		String resultTravis = "[Citizen [firstName=adri, lastName=miron, email=testemail@uniovi.es, "
+		String resultTravis = "[Agent [firstName=adri, lastName=miron, email=testemail@uniovi.es, "
 				+ "birthDate=Sun May 19 00:00:00 UTC 1996, address=C/Asturias, "
 				+ "ID=testid, nationality=camboya, NIF=1234, pollingStation=1]]";
 		ReadList rl = new TxtReadList();

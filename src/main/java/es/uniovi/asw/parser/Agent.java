@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * @author Oriol. Class use to represent the citizens and parse their data.
  */
-public class Citizen {
+public class Agent {
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -19,10 +19,12 @@ public class Citizen {
 	private String nationality;
 	private String NIF;
 	private int pollingStation;
+	private String location;
+	private int kind;
 
-	public Citizen(String firstName, String lastName, String email,
-			String birthDate, String address, String nationality, String ID,
-			String NIF, int pollingStation) {
+	public Agent(String firstName, String lastName, String email,
+				 String birthDate, String address, String nationality, String ID,
+				 String NIF, int pollingStation, String location, int kind) {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -33,11 +35,13 @@ public class Citizen {
 		this.ID = ID;
 		this.NIF = NIF;
 		this.pollingStation = pollingStation;
+		this.location=location;
+		this.kind=kind;
 	}
 
-	public Citizen(String firstName, String lastName, String email,
-			Date birthDate, String address, String nationality, String ID,
-			String NIF, int pollingStation) {
+	public Agent(String firstName, String lastName, String email,
+				 Date birthDate, String address, String nationality, String ID,
+				 String NIF, int pollingStation) {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -50,7 +54,7 @@ public class Citizen {
 		this.pollingStation = pollingStation;
 	}
 
-	public Citizen(String[] data) {
+	public Agent(String[] data) {
 		this.firstName = data[0];
 		this.lastName = data[1];
 		this.email = data[2];
@@ -117,6 +121,10 @@ public class Citizen {
 		return pollingStation;
 	}
 
+	public String getLocation(){ return location;}
+
+	public int getKind() {return kind;}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -133,7 +141,7 @@ public class Citizen {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Citizen other = (Citizen) obj;
+		Agent other = (Agent) obj;
 		if (ID == null) {
 			if (other.ID != null)
 				return false;
@@ -144,7 +152,7 @@ public class Citizen {
 
 	@Override
 	public String toString() {
-		return "Citizen [firstName=" + firstName + ", lastName=" + lastName
+		return "Agent [firstName=" + firstName + ", lastName=" + lastName
 				+ ", email=" + email + ", birthDate=" + birthDate + ", address="
 				+ address + ", ID=" + ID + ", nationality=" + nationality + ","
 				+ " NIF=" + NIF + ", pollingStation=" + pollingStation + "]";
