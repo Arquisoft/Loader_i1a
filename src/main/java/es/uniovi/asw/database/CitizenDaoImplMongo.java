@@ -6,14 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
-import com.mongodb.DuplicateKeyException;
-import com.mongodb.MongoClient;
-import com.mongodb.MongoException;
+import com.mongodb.*;
 
 import es.uniovi.asw.agents.Agent;
 import es.uniovi.asw.reportwriter.WriteReport;
@@ -44,8 +37,8 @@ public class CitizenDaoImplMongo implements CitizenDao {
 		if (loadProperties()) {
 
 			this.reporter = new WriteReportDefault();
-			this.mongo = new MongoClient(properties.getProperty("host"), Integer
-					.parseInt(properties.getProperty("port")));
+			this.mongo = new MongoClient(
+					new MongoClientURI("mongodb://admin:EIIASW2018$@ds127888.mlab.com:27888/loader_i1a_db"));
 			this.db = mongo.getDB(properties.getProperty("database"));
 			this.users = db.getCollection(properties.getProperty("collection"));
 
@@ -84,7 +77,6 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	public CitizenDaoImplMongo(String host, int port, String database,
 			String collection) {
 		this.reporter = new WriteReportDefault();
-		this.mongo = new MongoClient(host, port);
 		this.db = mongo.getDB(database);
 		this.users = db.getCollection(collection);
 
