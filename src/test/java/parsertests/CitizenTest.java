@@ -21,7 +21,7 @@ public class CitizenTest {
 		Double doub = new Double(5.0);
 
 		assertTrue(dummy.equals(dummy));
-		assertTrue(dummy.equals(dummy1));
+		assertFalse(dummy.equals(dummy1));
 		assertFalse(dummy.equals(dummy2));
 		assertFalse(dummy.equals(dummy3));
 		assertFalse(dummy4.equals(dummy1));
