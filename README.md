@@ -7,6 +7,10 @@
 Skeleton of Agents Loader module
 
 # Setup
+Before start using the project, is necessary to define the services that will take part in the management of the database.
+
+## mLab
+We are using an instance of **MongoDB** in **mLab**, that is a fully managed cloud database service. We are using this service because it is very helpful for us to have the database in a server, and not to have it in local. However, it is very advisable to know how to initialize the database in local through MongoDB. Because of that, below there is information about MongoDB.
 
 ## MongoDB
 In order to run the application you need to download and install [mongoDB](https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.4.2-signed.msi/download).
