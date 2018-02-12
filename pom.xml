@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>es.uniovi.asw</groupId>
-	<artifactId>citizensLoader_i3b</artifactId>
+	<artifactId>Loader_i1a</artifactId>
 	<version>0.0.1</version>
-	<name>citizensLoader_i3b</name>
+	<name>Loader_i1a</name>
 	<packaging>jar</packaging>
-	<description>Citizens SubSystem</description>
+	<description>Agents SubSystem</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -103,6 +103,12 @@
 			<groupId>com.itextpdf</groupId>
 			<artifactId>itextpdf</artifactId>
 			<version>5.5.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.maven-license-plugin</groupId>
+			<artifactId>maven-license-plugin</artifactId>
+			<version>1.4.0</version>
 		</dependency>
 	</dependencies>
 	<!--Build plugins -->
