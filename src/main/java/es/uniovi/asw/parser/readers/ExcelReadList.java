@@ -57,13 +57,13 @@ public class ExcelReadList extends AbstractReadList {
 
 				if (data != null) {
 
-					if (data[0].equals("")) {
+					if (data[0]==null || data[0].equals("")) {
 						wReport.report("Null name on row number " + r, ruta);
-					} else if (data[2].equals("")) {
+					} else if (data[2]==null || data[2].equals("")) {
 						wReport.report("Null email on row number " + r, ruta);
-					} else if (data[3].equals("")) {
+					} else if (data[3]==null || data[3].equals("")) {
 						wReport.report("Null ID on row number " + r, ruta);
-					} else if (data[4].equals("")) {
+					} else if (data[4]==null || data[4].equals("")) {
 						wReport.report("Null kind on row number " + r, ruta);
 					} else {
 						Double kind = Double.parseDouble(data[4]);

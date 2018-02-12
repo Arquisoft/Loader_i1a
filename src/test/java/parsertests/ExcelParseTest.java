@@ -51,23 +51,6 @@ public class ExcelParseTest {
 		Files.delete(file);
 	}
 
-	@Test
-	/**
-	 * Checks if the report is generated successfully.
-	 * 
-	 */
-	public void testNoDNI() {
-		SimpleDateFormat formatofilename = new SimpleDateFormat("dd-MM-yyyy",
-				Locale.getDefault());
-		String filename = formatofilename.format(new Date()) + ".txt";
-		File file = new File(filename);
-
-		ReadList rl = new ExcelReadList();
-		readData = rl.parse("src/test/resources/test3.xlsx");
-
-		assertTrue(file.exists());
-		Files.delete(file);
-	}
 
 	/**
 	 * Checks that the report file is generated when the excel doesn't have a
@@ -94,7 +77,7 @@ public class ExcelParseTest {
 	 * 
 	 */
 	@Test
-	public void testNoSurname() {
+	public void testNoEmail() {
 		SimpleDateFormat formatofilename = new SimpleDateFormat("dd-MM-yyyy",
 				Locale.getDefault());
 		String filename = formatofilename.format(new Date()) + ".txt";
@@ -113,7 +96,7 @@ public class ExcelParseTest {
 	 * 
 	 */
 	@Test
-	public void testNoBirthDate() {
+	public void testNoLocation() {
 		SimpleDateFormat formatofilename = new SimpleDateFormat("dd-MM-yyyy",
 				Locale.getDefault());
 		String filename = formatofilename.format(new Date()) + ".txt";
@@ -132,7 +115,7 @@ public class ExcelParseTest {
 	 * 
 	 */
 	@Test
-	public void testNoNIF() {
+	public void testID() {
 		SimpleDateFormat formatofilename = new SimpleDateFormat("dd-MM-yyyy",
 				Locale.getDefault());
 		String filename = formatofilename.format(new Date()) + ".txt";
@@ -151,7 +134,7 @@ public class ExcelParseTest {
 	 * 
 	 */
 	@Test
-	public void testNoAddress() {
+	public void testNoKind() {
 		SimpleDateFormat formatofilename = new SimpleDateFormat("dd-MM-yyyy",
 				Locale.getDefault());
 		String filename = formatofilename.format(new Date()) + ".txt";

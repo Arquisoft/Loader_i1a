@@ -46,24 +46,6 @@ public class TxtParseTest {
 
 	}
 
-	@Test
-	/**
-	 * Checks if the report is generated successfully.
-	 * 
-	 */
-	public void testNoDNI() {
-		SimpleDateFormat formatofilename = new SimpleDateFormat("dd-MM-yyyy",
-				Locale.getDefault());
-		String filename = formatofilename.format(new Date()) + ".txt";
-		File file = new File(filename);
-
-		ReadList rl = new TxtReadList();
-		readData = rl.parse("src/test/resources/test3.txt");
-
-		assertTrue(file.exists());
-		Files.delete(file);
-	}
-
 	/**
 	 * Checks that the report file is generated when the excel doesn't have a
 	 * name
@@ -78,6 +60,82 @@ public class TxtParseTest {
 
 		ReadList rl = new TxtReadList();
 		readData = rl.parse("src/test/resources/test4.txt");
+
+		assertTrue(file.exists());
+		Files.delete(file);
+	}
+
+	/**
+	 * Checks that the report file is generated when the excel doesn't have a
+	 * name
+	 *
+	 */
+	@Test
+	public void testNoLocation() {
+		SimpleDateFormat formatofilename = new SimpleDateFormat("dd-MM-yyyy",
+				Locale.getDefault());
+		String filename = formatofilename.format(new Date()) + ".txt";
+		File file = new File(filename);
+
+		ReadList rl = new TxtReadList();
+		readData = rl.parse("src/test/resources/test5.txt");
+
+		assertTrue(file.exists());
+		Files.delete(file);
+	}
+
+	/**
+	 * Checks that the report file is generated when the excel doesn't have a
+	 * name
+	 *
+	 */
+	@Test
+	public void testNoEmail() {
+		SimpleDateFormat formatofilename = new SimpleDateFormat("dd-MM-yyyy",
+				Locale.getDefault());
+		String filename = formatofilename.format(new Date()) + ".txt";
+		File file = new File(filename);
+
+		ReadList rl = new TxtReadList();
+		readData = rl.parse("src/test/resources/test6.txt");
+
+		assertTrue(file.exists());
+		Files.delete(file);
+	}
+
+	/**
+	 * Checks that the report file is generated when the excel doesn't have a
+	 * name
+	 *
+	 */
+	@Test
+	public void testNoID() {
+		SimpleDateFormat formatofilename = new SimpleDateFormat("dd-MM-yyyy",
+				Locale.getDefault());
+		String filename = formatofilename.format(new Date()) + ".txt";
+		File file = new File(filename);
+
+		ReadList rl = new TxtReadList();
+		readData = rl.parse("src/test/resources/test7.txt");
+
+		assertTrue(file.exists());
+		Files.delete(file);
+	}
+
+	/**
+	 * Checks that the report file is generated when the excel doesn't have a
+	 * name
+	 *
+	 */
+	@Test
+	public void testNoKind() {
+		SimpleDateFormat formatofilename = new SimpleDateFormat("dd-MM-yyyy",
+				Locale.getDefault());
+		String filename = formatofilename.format(new Date()) + ".txt";
+		File file = new File(filename);
+
+		ReadList rl = new TxtReadList();
+		readData = rl.parse("src/test/resources/test8.txt");
 
 		assertTrue(file.exists());
 		Files.delete(file);
