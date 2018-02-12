@@ -31,7 +31,6 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	 * Default constructor that initializes the database from the constants
 	 * specified above
 	 */
-	@SuppressWarnings("deprecation")
 	public CitizenDaoImplMongo() {
 		
 		if (loadProperties()) {
@@ -66,8 +65,8 @@ public class CitizenDaoImplMongo implements CitizenDao {
 
 	/**
 	 * This method is used in the test (for using the database for test)
-	 * 
-	 * 
+	 *
+	 *
 	 * @param host
 	 * @param port
 	 * @param database
@@ -77,6 +76,8 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	public CitizenDaoImplMongo(String host, int port, String database,
 			String collection) {
 		this.reporter = new WriteReportDefault();
+		this.mongo = new MongoClient(
+				new MongoClientURI("mongodb://admin:EIIASW2018$@ds127888.mlab.com:27888/loader_i1a_db"));
 		this.db = mongo.getDB(database);
 		this.users = db.getCollection(collection);
 
