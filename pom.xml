@@ -104,12 +104,6 @@
 			<artifactId>itextpdf</artifactId>
 			<version>5.5.10</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.google.code.maven-license-plugin</groupId>
-			<artifactId>maven-license-plugin</artifactId>
-			<version>1.4.0</version>
-		</dependency>
 	</dependencies>
 	<!--Build plugins -->
 	<build>
@@ -191,31 +185,6 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>com.google.code.maven-license-plugin</groupId>
-				<artifactId>maven-license-plugin</artifactId>
-				<version>1.4.0</version>
-				<configuration>
-					<header>src/main/config/copyright.txt</header>
-					<excludes>
-						<exclude>**/LICENSE.txt</exclude>
-						<exclude>**/COPYING.LESSER</exclude>
-						<exclude>**/COPYING</exclude>
-						<exclude>**/resources/**</exclude>
-					</excludes>
-					<mapping>
-						<jspx>xml</jspx>
-					</mapping>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.1</version>
@@ -226,18 +195,15 @@
 					<showDeprecation>true</showDeprecation>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>2.9.1</version>
-
 				<!--Aquí se puede incluir configuración para la librería -->
 				<configuration>
 					<enableRulesSummary>false</enableRulesSummary>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
