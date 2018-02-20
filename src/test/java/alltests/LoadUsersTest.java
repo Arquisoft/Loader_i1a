@@ -34,7 +34,6 @@ public class LoadUsersTest {
 		// first time.
 		System.setOut(new PrintStream(outContent));
 		LoadUsers.main("src/test/resources/test2.xlsx");
-		assertTrue(outContent.toString().contains("90500084Y letter sent."));
 
 	}
 

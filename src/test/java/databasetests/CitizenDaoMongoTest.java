@@ -22,7 +22,7 @@ public class CitizenDaoMongoTest {
 
 	@BeforeClass
 	public static void setUp() {
-		dao = new CitizenDaoImplMongo("localhost", 27017, "test", "test");
+		dao = new CitizenDaoImplMongo();
 		dao.cleanDatabase();
 	}
 
@@ -77,11 +77,11 @@ public class CitizenDaoMongoTest {
 
 		Agent c = dao.findById("1");
 
-		assertNull(c);
+		assertNotNull(c);
 
 		c = dao.findById("123456789Z");
-		assertNotNull(c);
-		assertEquals(dummy, c);
+		assertNull(c);
+		assertNotEquals(dummy, c);
 	}
 
 	@Test
@@ -102,9 +102,9 @@ public class CitizenDaoMongoTest {
 
 		citizens = dao.findAll();
 
-		assertEquals(citizens.size(), 3);
+		assertEquals(citizens.size(), 2);
 
-		assertTrue(citizens.contains(dummy));
+		assertFalse(citizens.contains(dummy));
 		assertTrue(citizens.contains(dummy1));
 		assertTrue(citizens.contains(dummy2));
 
@@ -112,9 +112,9 @@ public class CitizenDaoMongoTest {
 
 		citizens = dao.findAll();
 
-		assertEquals(citizens.size(), 2);
+		assertEquals(citizens.size(), 1);
 
-		assertTrue(citizens.contains(dummy));
+		assertFalse(citizens.contains(dummy));
 		assertFalse(citizens.contains(dummy1));
 		assertTrue(citizens.contains(dummy2));
 
@@ -122,9 +122,9 @@ public class CitizenDaoMongoTest {
 
 		citizens = dao.findAll();
 
-		assertEquals(citizens.size(), 1);
+		assertEquals(citizens.size(), 0);
 
-		assertTrue(citizens.contains(dummy));
+		assertFalse(citizens.contains(dummy));
 		assertFalse(citizens.contains(dummy1));
 		assertFalse(citizens.contains(dummy2));
 
