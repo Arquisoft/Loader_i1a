@@ -22,7 +22,7 @@ public class CitizenDaoMongoTest {
 
 	@BeforeClass
 	public static void setUp() {
-		dao = new CitizenDaoImplMongo();
+		dao = new CitizenDaoImplMongo("", 1, "loader_i1a_db", "users");
 		dao.cleanDatabase();
 	}
 
