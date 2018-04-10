@@ -1,12 +1,18 @@
 package es.uniovi.asw.database;
 
-import java.io.FileInputStream;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
-import com.mongodb.*;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.DuplicateKeyException;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.MongoException;
 
 import es.uniovi.asw.agents.Agent;
 import es.uniovi.asw.reportwriter.WriteReport;
@@ -33,35 +39,20 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	 */
 	public CitizenDaoImplMongo() {
 		
-		if (loadProperties()) {
+
 
 			this.reporter = new WriteReportDefault();
 			this.mongo = new MongoClient(
 					new MongoClientURI("mongodb://admin:EIIASW2018$@ds127888.mlab.com:27888/loader_i1a_db"));
-			this.db = mongo.getDB(properties.getProperty("database"));
-			this.users = db.getCollection(properties.getProperty("collection"));
+			this.db = mongo.getDB("loader_i1a_db");
+			this.users = db.getCollection("loader_i1a_collection");
 
 			users.createIndex(new BasicDBObject("id", 1), new BasicDBObject(
 					"unique", true));
-		}
+		
 	}
 
-	/**
-	 * Loads the database properties file
-	 * 
-	 * @return True if we could load the file without problems, false otherwise
-	 */
-	private boolean loadProperties() {
-		try {
-			FileInputStream input = new FileInputStream("src/main/resources/database.properties");
-			this.properties = new Properties();
-			this.properties.load(input);
-			return true;
-		} catch (Exception e) {
-			reporter.report(e, "Error loading database.properties file");
-			return false;
-		}
-	}
+
 
 	/**
 	 * This method is used in the test (for using the database for test)

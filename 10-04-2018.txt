@@ -1,0 +1,36 @@
+ERROR 
+------------------------------
+Date and hour: 10-04-2018 11:47:44
+Error: No se ha encontrado el archivo solicitado
+Message exception: src/test/resources/test2.xslt (No such file or directory)
+
+ERROR 
+------------------------------
+Date and hour: 10-04-2018 11:48:03
+Error: No se ha encontrado el archivo solicitado
+Message exception: src/test/resources/test2.xslx (No such file or directory)
+
+ERROR 
+------------------------------
+Date and hour: 10-04-2018 11:56:13
+Error: No se ha encontrado el archivo solicitado
+Message exception: src/test/resources/test2.xslx (No such file or directory)
+
+ERROR 
+------------------------------
+Date and hour: 10-04-2018 11:56:32
+Error: No se ha encontrado el archivo solicitado
+Message exception: /src/test/resources/test2.xslx (No such file or directory)
+
+ERROR 
+------------------------------
+Date and hour: 10-04-2018 12:00:36
+Error: No se ha encontrado el archivo solicitado
+Message exception: src/test/resources/test.xslx (No such file or directory)
+
+ERROR 
+------------------------------
+Date and hour: 10-04-2018 12:00:59
+Error: No se ha encontrado el archivo solicitado
+Message exception: test.xslx (No such file or directory)
+
