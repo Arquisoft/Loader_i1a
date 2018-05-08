@@ -24,7 +24,7 @@ import es.uniovi.asw.reportwriter.WriteReportDefault;
  * @author Roberto
  *
  */
-public class CitizenDaoImplMongo implements CitizenDao {
+public class AgentDaoImplMongo implements AgentDao {
 
 
 	private MongoClient mongo;
@@ -37,7 +37,7 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	 * Default constructor that initializes the database from the constants
 	 * specified above
 	 */
-	public CitizenDaoImplMongo() {
+	public AgentDaoImplMongo() {
 		
 
 
@@ -64,8 +64,8 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	 * @param collection
 	 */
 	@SuppressWarnings("deprecation")
-	public CitizenDaoImplMongo(String host, int port, String database,
-			String collection) {
+	public AgentDaoImplMongo(String host, int port, String database,
+							 String collection) {
 		this.reporter = new WriteReportDefault();
 		this.mongo = new MongoClient(
 				new MongoClientURI("mongodb://admin:EIIASW2018$@ds127888.mlab.com:27888/loader_i1a_db"));

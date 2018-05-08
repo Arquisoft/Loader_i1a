@@ -10,7 +10,7 @@ import es.uniovi.asw.agents.Agent;
  * @author Gonzalo de la Cruz Fernández - UO244583
  *
  */
-public interface CitizenDao {
+public interface AgentDao {
 
 	boolean insert(Agent c);
 
