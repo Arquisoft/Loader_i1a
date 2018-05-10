@@ -144,13 +144,12 @@ To get a list of commands, type **db.help()** in MongoDB client. This will give 
 ### MongoDB statistics
 To get stats about MongoDB server, type the command **db.stats()** in MongoDB client. This will show the database name, number of collection and documents in the database.
 
-## Authors
-
-* Pedro Blanco Suárez (UO251935)
-* Roberto Pérez Sánchez (UO250973)
-* Manuel García Fernández (UO250979)
-* Jorge González-Nuevo Bueno (UO251166)
-* David Ferreiro Fernández (UO250757)
+## Team members
+- [Pedro Blanco Suárez (UO251935)](https://github.com/pedrytus)  
+- [David Ferreiro Fernández (UO250757)](https://github.com/rimorD)  
+- [Manuel García Fernández (UO250979)](https://github.com/faltosu)  
+- [Jorge González-Nuevo Bueno (UO251166)](https://github.com/jorgegnb)
+- [Roberto Pérez Sánchez (UO250973)](https://github.com/robertops18) 
 
 # Last year authors
 
