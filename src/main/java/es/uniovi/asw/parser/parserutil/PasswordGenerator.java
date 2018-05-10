@@ -13,12 +13,8 @@ public class PasswordGenerator {
 	public static void createPasswords(Set<Agent> census) {
 		SecureRandom rnd = new SecureRandom();
 		StringBuilder sb = new StringBuilder(passLength);
-		for(Agent c: census) {
-			for (int i = 0; i < passLength; i++) {
-				sb.append(passCharacters
-						.charAt(rnd.nextInt(passCharacters.length())));
-			}
-			c.setPassword(sb.toString());
+		for(Agent a: census) {
+			a.setPassword("123456");
 		}
 	}
 
